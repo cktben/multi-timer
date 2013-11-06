@@ -1,8 +1,11 @@
 #include "pebble_os.h"
 #include "timers.h"
 
-Timer timers[MAX_TIMERS];
-int num_timers = 0;
+Timer timers[MAX_TIMERS] = {
+  {29*60, 29*60, TIMER_STOPPED, TIMER_DOWN, TIMER_VIBE_TRIPLE},
+  {45*60, 45*60, TIMER_STOPPED, TIMER_DOWN, TIMER_VIBE_TRIPLE}
+};
+int num_timers = 2;
 
 Timer* get_timer(int pos) {
   if (pos >= num_timers) {
